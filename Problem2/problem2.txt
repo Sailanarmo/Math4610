@@ -1,0 +1,3 @@
+Approximation of f`(x) at a point using f`(x) = f(x+h)-f(x)/h = lim as h->0 f(x+h) - f(x)/h
+
+With log error and log h

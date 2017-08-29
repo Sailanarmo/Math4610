@@ -1,0 +1,37 @@
+Machine Epsilon
+
+Floating numbers have finite precision.
+
+x = number of bytes or bits |sign (+) |mantissa|exponent|
+y = |sign (-) |mantissa|exponent|
+--------------------------------
+
+x - y
+
+Come up with an algorithm to find the accuracy of number representation in some floating point number system.
+
+Start with x~ = 1.0
+           x = 1.0;
+
+y = 1 - x/2;
+
+error = | x~ - y|
+
+loop it
+
+y = 1 - x/4
+error = |x~ - y|
+
+y = 1 - x/2^n, n >1
+
+error = |x~ - y| = 0.
+
+
+float macEps()
+{
+
+    
+    return precision;
+}
+
+
