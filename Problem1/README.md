@@ -8,8 +8,8 @@ The program has two classes named MacEpsFloat and MacEpsDouble.
 ## Functions and their Descriptions:
 
 ```cpp
-int precision(int n) //Takes an integer n, and returns the precision.
-float errorX() //Returns the error, X representing float or double;
+int precision(int n); //Takes an integer n, and returns the precision.
+float errorX(); //Returns the error, X representing float or double;
 ```
 
 ## Variables and their Descriptions:
@@ -19,6 +19,7 @@ float e = 1.0; //This is the error to subtract from y
 float x = 1.0; //A constant to be divided by 2^n
 float y = 0.0; //The Machine Epsilon
 float error = 0.0; //The error to be returned
+float prec = 0.0; //represents the Precision.
 ```
 
 ## The Output
