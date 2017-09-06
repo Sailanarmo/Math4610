@@ -1,18 +1,18 @@
-#Smaceps
+# Smaceps
 
-##Description of Program:
+## Description of Program:
 This program will allow the user to calculate the Machine Epsilon for Floating point numbers and Doubles. To compile this program in a Linux enviornment, simply type `Make` into your terminal. Make will compile all of the code and give you the executable called **release**, simply type `./release` to run the program. 
 
 The program has two classes named MacEpsFloat and MacEpsDouble. 
 
-##Functions and their Descriptions:
+## Functions and their Descriptions:
 
 ```cpp
 int precision(int n) //Takes an integer n, and returns the precision.
 float errorX() //Returns the error, X representing float or double;
 ```
 
-##Variables and their Descriptions:
+## Variables and their Descriptions:
 
 ```cpp
 float e = 1.0; //This is the error to subtract from y
@@ -21,16 +21,17 @@ float y = 0.0; //The Machine Epsilon
 float error = 0.0; //The error to be returned
 ```
 
-##The Output
+## The Output
 The output of the program should look like this:
-`Precision Float: 24
+```
+Precision Float: 24
 Float Error: 5.96046e-08
 
 Precision Double: 53
 Double Error: 1.11022e-16
-`
+```
 
-##The Code
+## The Code
 ```cpp
 int MacEpsX::precision(int n)
 {
@@ -49,7 +50,7 @@ int MacEpsX::precision(int n)
 	return prec;
 }
 ```
-MacEpsX, X representing float or double. Takes `n` as our starting condition. It then takes it into the Machine Epsilon, represented as `y`. ![equation](macEps = macEps - /frac{x}{2^n}) is the formula given to compute the Machine Epsilon. If `y` does not equal to `1.0`, then it will calculate the `error` by taking the absolute value of `e - y`. It then will increment `n` by 1 and recursively return to the top of the program.
+MacEpsX, X representing float or double. Takes `n` as our starting condition. It then takes it into the Machine Epsilon, represented as `y`. [equation](macEps = macEps - /frac{x}{2^n}) is the formula given to compute the Machine Epsilon. If `y` does not equal to `1.0`, then it will calculate the `error` by taking the absolute value of `e - y`. It then will increment `n` by 1 and recursively return to the top of the program.
 
 ###Last Modified: 9-6-2017
 ###Author: Raul Ramirez
