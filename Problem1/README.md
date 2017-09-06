@@ -50,7 +50,11 @@ int MacEpsX::precision(int n)
 	return prec;
 }
 ```
-MacEpsX, X representing float or double. Takes `n` as our starting condition. It then takes it into the Machine Epsilon, represented as `y`. ![equation](https://latex.codecogs.com/gif.latex?macEps&space;=&space;macEps&space;-&space;\frac{x}{2^n}) is the formula given to compute the Machine Epsilon. If `y` does not equal to `1.0`, then it will calculate the `error` by taking the absolute value of `e - y`. It then will increment `n` by 1 and recursively return to the top of the program.
+MacEpsX, X representing float or double. Takes `n` as our starting condition. It then takes it into the Machine Epsilon, represented as `y`. 
 
-###Last Modified: 9-6-2017
-###Author: Raul Ramirez
+![equation](https://latex.codecogs.com/gif.latex?macEps&space;=&space;macEps&space;-&space;\frac{x}{2^n}) 
+
+This is the formula given to compute the Machine Epsilon. If `y` does not equal to `1.0`, then it will calculate the `error` by taking the absolute value of `e - y`. It then will increment `n` by 1 and recursively return to the top of the program.
+
+### Last Modified: 9-6-2017
+### Author: Raul Ramirez
