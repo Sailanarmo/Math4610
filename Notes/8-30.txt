@@ -1,0 +1,65 @@
+Scientific Computing is a discipline concerned with the development and study of numerical algorithms.
+
+Ex: Find the zeros of a twice continuously differentiable function f(x).
+
+Alg: Newton's Method
+
+		x_(n+1) = x_n - f(x_n)/f`(x_n)
+		x_0 = given approximation
+
+
+This generates a sequence of approximations of a root of f. {x_n}_n=0^inf
+
+Where do these algorithms apply?
+
+Starting point: Mathematical Model
+	This is ANY mathematical description of a real process (physical, crytography) that results in a mathematical system of equations or problem.
+	-> Linear Algebra problem
+		-> Solving Linear Systems
+		-> Eigenvalue Problems
+		-> ODE's
+		-> Partial Differential Equations
+	-> Optimization Problems
+		-> Constrained
+		-> Unconstrained
+
+
+Where do errors occur and what do we do to mitigate them?
+
+Errors:
+	
+	Def: The absolute error in aproximating a number u by a number v is |u - v| and the relative error of approximating u with v is |u - v|/|u| where (u != 0).
+
+	u		v		abs error		relative error
+	----------------------------------------------
+	1		0.99		0.01			0.01
+	1		1.01		0.01			0.81
+	-1.5	-1.2		0.3				0.2
+	100		99.9		0.01			0.0001
+	100		99			1				0.01
+
+It is always better to use the relative error, however we have to spend time trying to figure out how to bound it.
+
+Error Types
+
+	1. There may be errors in the mathematical model.
+		-> Pendulum Problem
+	2. Approximation Errors, these come after modeling is done.
+		-> Discretization Error
+			Continuous -> discrete model
+		-> Convergence Error
+	3. Round Off Errors
+
+Tools:
+	1. Taylor Series Expansions
+		f(x) = sum_n=0^inf f^(n)(x_0)/n! (x - x_0)^n
+		= sum_n_0^N f^(n)(x_0)/n! (x - x_0)^n + f^(n+1)(squiggle)/(n+1)! (x - x_0)^(n+1)
+
+	2. Linear Algebra Rules
+		-> Eigenvalue Problems
+		-> Factor Matrices
+		-> Solve Linear Systems
+	3. Sequences and Series
+	
+	H notation for Taylor Series
+		f(x_0 + h) = f(x_0) + h(f`(x_0) + 1/2h^2f``(x_0) + ....

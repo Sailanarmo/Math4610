@@ -1,0 +1,172 @@
+Software Manual Entry
+
+2-Page Entries
+
+Title ex) smaceps
+
+Include the routine
+
+==============
+
+Name: Smaceps
+
+Description:
+
+Input Values:
+
+Output:
+
+Code:
+
+	Example:
+
+Last Modification Date:
+
+Author:
+
+==============
+
+Now Actual Lecture Material
+
+--------------------------------
+
+
+Designing Software/Choose Algorithms
+
+	- Accuracy - we want error, but we want it to be as small as possible.
+		ex) (f'(x) ~ (f(r_0 + h) - f(x_0))/h
+		ex) f'(x_0) ~ (f(x_0 + h) - f(x_0 - h))/2h
+			error ~ O(h^2) <= ch^2
+
+	- Efficiency - usually get's in the way of accuracy. How fast can we get a result.
+
+	- Limited by
+		-CPU Speed
+		-Memory
+
+We are interested in 2 Things
+
+	- Rate of Convergence
+		error <= ch^n
+	
+	- Flops - floating point operations (per second)
+
+How do we do this kind of operation?
+
+	C = AB
+
+	if C_ij = sum_k=1^n A_i,k * B_k,j
+
+	for (int i = 0; i<n; ++i)
+	{
+		for(int j = 0; j < n; ++j)
+		{
+			for(int k = 0; k < n; ++k)
+			{
+				c[i][j] = c[i][j] + a[i][k] * b[i][j];
+			}
+		}
+	}
+
+	Order N^3, kill me.
+
+Ex: Polynomial Evaluation
+
+	p_n(x) = c_0 + c_1x + c_2x^2 + ... + c_nx^n
+
+=================================================
+Brute force Method:
+
+	Sum = 0.0;
+
+	for (int i = 0; i <= n; ++i)
+	{
+		sum = sum + c[i] * pow(xval,i);
+
+	}
+
+
+Better:
+
+	sum = c[0];
+
+	for (int i = 0; i <= n; ++i)
+	{
+		sum = sum + c[i]*pow(xval, i);
+	}
+
+Even Better:
+
+	sum = c[0];
+	xpow = xval;
+
+	for(int i = 0; i <= n; ++i)
+	{
+		sum = sum + c[i] * xpow;
+		xpow = xpow*xval;
+	}
+
+Best:
+
+	p_n(x) = (((( ... (c_nx+c_(n-1))x+c_(n-2))x+c_(n-3))x ... ) x+c_1)x + c_0
+
+	sum = c[n];
+
+	for (int i = n-1; i >= 0; i--)
+	{	
+		sum = (sum * xval + c[i]);
+	}
+
+==================================================
+
+How do we compute Square Roots?
+
+	EX: compute sqrt
+
+	g(x) = sqrt(1+x)
+
+	|x| << 1
+
+	y~ = g(0) = sqrt(1 + 0) = sqrt(1) = 1
+
+	x~ = 0
+
+	-------------
+
+	y = g(x) => |y - y~| = (1+x/2) - 1 + h.o.t - h.o.t (didn't know how to scratch out)
+				|y - y~| = 1/2(x - x~)
+					     x-x~ ~ 0.001
+				|y - y~| ~ 0.0005
+
+	-------------
+
+Accumulation of Errors
+
+	- Linear Accumulation of round off errors
+
+		E_n, n computations for error.
+
+		E_n~ c_0 * n * E_0
+
+	- Exponential Growth, we do not want this.
+
+		E_n = c_1^n * E_0
+
+Root Finding: Find x, where is an element of the Reals s.t f(x) = 0
+
+	1. Functional Iterations
+	2. Bisection Method
+	3. Newton's Method
+	4. Secant Method
+
+Ex: Consider
+
+	y_n = int_0^1 x^n/x+10dx
+
+	for n = 1, 2, ... , 30
+
+	y_n + 10y_(n-1) = int_0^1 (x^n + 10x^(n-1))/(x+10)dx = int_0^1 x^(n-1) dx = 1/n
+
+	y_0 = int_0^1 1 / x+10 dx = ln(11) - ln(10)
+
+
