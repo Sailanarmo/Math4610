@@ -1,4 +1,4 @@
-OBJS = main.cpp macEpsFloat.hpp macEpsFloat.cpp macEpsDouble.hpp macEpsDouble.cpp
+OBJS = main.cpp e.cpp e.hpp macEpsFloat.hpp macEpsFloat.cpp macEpsDouble.hpp macEpsDouble.cpp
 
 CC = g++
 DEBUG_FLAGS = -O0 -g3 -fsanitize=address
