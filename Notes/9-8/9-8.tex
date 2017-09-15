@@ -1,0 +1,103 @@
+General Problem: Find x /in R such that f(x) = 0
+
+Fixed Point / Functional Iteration
+
+To Start: we write
+
+	f(x) = 0 => x = x - f(x)
+			 => x = g(x)
+
+Suppose we are given an initial guess at the solution f(x) = 0, say x_0 /in /R
+
+Then:
+	x_1 = g(x_0)
+
+Then if |x_1 - x_0| /dne 0 we can "try"
+	x_2 = g(x_1)
+and we hope that x_2 is closer to the fixed point than x_1 or x_0. More gerneally, we can write:
+	x_(k+1) = g(x_n)
+
+for k = 0,1,2,.... this generates a sequence of approximations to the fixed point:
+	{x_k}_k=0^/inf
+
+We want the sequence to converge and converge to the solution.
+
+==================================================================
+
+Analysis:
+
+	x~ /in /R in the solution of the fixed point problem x = g(x)
+
+	x_(k+1) = g(x) = x_k - f(x)
+
+	Subtract x~ from both sides:
+
+		x_(k+1) - x~ = x_k - x~ - f(x_k)
+
+	Define e_x = x_(k+1) - x~
+		   e_x = e_x - f(x_k)
+		       = e_k -(f(x_k) - f(x~))
+		   e_(k+1) = e_k - (f(x~)+f'(x~)(x_h-x~))
+
+		   e_(k+1) /aprox e_k - f'(x~)e_k
+					= (1 - f'(x~))e_k = g'(x~)e_k
+
+				g(x) = x~
+				g'(x~) = \frac{d}{dx}(x - f(x))/floorx~ = 1 - f'(x~)
+
+		  e_(k+1) /aprox g'(x~) e_k
+				  /aprox g'(x~)(g'(x~)e_(k+1)) = (g'(x~))^2e_(k-1)
+				  .
+				  .
+				  .
+				  .
+				  .
+				  = (g'(x~))^k*e_0
+
+=====================================================================
+
+Fixed Point Problems:
+
+if |g'(x~)| < 1 this seqauence will converge.
+
+	Fcx:	f(x) = xsin(x)
+
+Ex: Suppose we have a linear system Ax = b where A /in /R^(nxn), x /in /R^n, b /in /R^n
+
+	A = (L + D + U) => (L + D + U)x = b
+	Dx = b - (L + U)x
+	 x = D^-1(b - (L + U)x)
+
+	Jacobian Iteration
+		x_(k+1) = D^-1(b -(L+U)x_n)
+		k = 0,1,2, ..., n
+
+	Usually, computing something like this, would be n^3, however, with this iteration, 
+	it is closer to n.
+
+
+Functional Iteration:
+	
+	Find x~ /in /R such that f(x~) = 0
+
+	The algorithm is:
+		1. Define a function g(x) such that x~ = g(x~)
+		2. Implement the recursion 
+			x_(k+1) = g(x_k) and iterate unitl the sequence converges.
+
+	Down Side is: The error e_u is reduced by a factor of |g'(x~) = 0.9999, then the error will be reduced by:
+		e_(u+1) /leq (0.99999)e_u
+
+
+We need better,
+
+Now suppose the function f(x) is continuous on a closed and counded interval [a.b]. We can use the Intermediate Value Theorem to implement an algorithm called the Bisection Method.
+
+Assume that x~ /in /R is a root of f and x~ /in [a,b]. Then there is at least one value c /in [a,b] such that f(c) = 0.
+	=> f(a) /leq 0 and f(b) /geq 0
+	   or
+	   f(a) /geq 0 and f(h) /leq 0
+	
+	=> if f(a) * f(b) < 0
+	
+		

@@ -1,0 +1,11 @@
+#1 Github account
+
+#2 Write a routine that performs functional or fixed point iteration for fixed the? root(s) of a function.
+
+#3 Make sure your code works for the following problems use fixed pt iteration and Bisection:
+	a) f(x) = 3xsin(10x) for x /in [0,7]
+	b) f(x) = xe^-x x /in (-inf,inf)
+	
+#4 Create Software Manual Pages for the routines in #2 and #3.
+	
+Due Wednesday Sept. 20th.

@@ -16,13 +16,13 @@ int E::factorial(int n)
 double E::computeE()
 {
 
-	//sum = std::pow(e,x_0);	
-	sum = 0;
-	for (int i = 1; i < N; ++i)
+	double value = 1.0;
+	double term = 1.0;
+	for (int i = 1; i <= 50; ++i)
 	{
-		sum += (((std::pow(x-x_0,i))/(factorial(i))));
+		term *= 1.0/i;
+		value += term;
 	}
 
-	return std::pow(std::exp(1),x_0) * sum;
-	//return sum;
+	return value;
 } 

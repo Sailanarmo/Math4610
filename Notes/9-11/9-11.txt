@@ -1,0 +1,84 @@
+Bisection:
+
+	Inputs:
+		[a,b]
+		tolerance
+		maxIter
+		f
+
+Template<typename F>
+double bisect(double a, double b, F f, double tol, int maxIter)
+{
+
+	double error 10.0 * tol;
+	
+	double f_a = f(a);
+	double f_b = f(b);
+
+	if (f_a * f_b >= 0.0)
+	{
+		return error_message;
+	}
+
+	int count = 0;
+
+	while(error > tol && count < maxIter)
+	{
+		c = 0.5 * (a+b);
+		f_c = f(c);
+
+		if(f_a * f_c < 0.0)
+		{
+			b = c;
+			f_b = f_c;
+		}
+		else
+		{
+			a = c;
+			f_a = f_C;
+		}
+		error = |b-a|;
+		count++;
+	}
+
+	return c;
+
+}
+
+bisection(0, 7, [](double x){return (3*x *sin(10*x))}, .001, 1000);
+
+bisection(-inf, inf, [](double x){return ((x*e^-x))}, .001, 1000);
+
+Bisection Error:
+
+	E_0 = b_0 - a_0;   |E_0| = |b_0 - a_0|
+	E_1 = b_1 - a_1;   |E_1| = |b_1 - a_1| = 1/2|b_0 - a_0|
+	  .
+	  .
+	  .
+	E_n = b_n - a_n;   |E_n| = (1/2)^n(b_0 - a_0) 
+
+|E_n| = 1/2^n(b_0 - a_0) <= tol
+
+	(b_0 - a_0)/tol <= 2^n
+
+	log_2((b_0 - a_0)/tol) <= n
+
+	log_10((b_0 - a_0)/tol) <= nlog_10(2)
+
+	n >= ((log_10((b_0 - a_0)/tol))/log_10(2))
+
+
+Find x /in /R s.t f(x) = 0
+
+1. Fixed Point Iteration
+	Pros	 Cons
+	Simple	 f -> g x = g(x)
+			 |g`(x~)| < 1
+
+2. Bisection Method
+	Pros				Cons
+	We can guarantee	Convergence is slow 
+	accuracy in a		F must not be continuous 
+	given # of steps	Does not extend to multiple dimensions
+
