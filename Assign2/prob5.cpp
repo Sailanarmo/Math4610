@@ -26,7 +26,7 @@ int main()
 		std::fesetround(FE_DOWNWARD);
 		y_n = integral(i, y_n);
 
-		std::cout << i-1 << " " << std::fixed << std::setprecision(20) << y_n << std::endl;
+		std::cout << i-1 << " " << std::fixed << std::setprecision(9) << y_n << std::endl;
 	}
 
 }
