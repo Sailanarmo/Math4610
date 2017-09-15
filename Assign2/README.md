@@ -8,7 +8,7 @@
 
 For example,
 
-    g++ -std=c++11 approx.cpp
+    g++ -std=c++11 aprox.cpp
 
 will produce an executable **./a.out**, however, a better way to compile is to use `Make`, for example:
 
@@ -32,58 +32,58 @@ having to multiply the entire function by 10 the entire time, making our computa
 
 ```cpp
 
-    #include <iostream>
-    #include <cmath>
-	#include <cfenv>
+#include <iostream>
+#include <cmath>
+#include <cfenv>
 
-	//this namespace was created in order to avoid use of a global variable.
-	namespace u
+//this namespace was created in order to avoid use of a global variable.
+namespace u
+{
+	double h = 0.0;
+}
+//This function would take in the input and return the absolute error of the funtion
+double absEr(double input)
+{
+
+	double result = 0.0;
+
+	result = std::abs(((std::cos(input)) - u::h));
+
+	return result;
+
+}
+
+//This function takes in two arguments and returns the approximation of the function
+double approx(double input, double h)
+{
+
+	std::cout << "Iterations: " << h << " ";
+
+	u::h = (((std::sin(input + h)) - (std::sin(input - h)))/(2*h));
+
+	return u::h;
+}
+
+
+int main()
+{
+	//this variable is our starting iteration
+	double n = 0.1;
+	//I chose 18 to be an arbitrary number. It can be smaller or larger
+	for(int i = 1; i < 18; ++i)
 	{
-		double h = 0.0;
-	}
-	//This function would take in the input and return the absolute error of the funtion
-	double absEr(double input)
-	{
-
-		double result = 0.0;
-
-		result = std::abs(((std::cos(input)) - u::h));
-
-		return result;
-
-	}
-
-	//This function takes in two arguments and returns the approximation of the function
-	double approx(double input, double h)
-	{
-	
-		std::cout << "Iterations: " << h << " ";
-
-		u::h = (((std::sin(input + h)) - (std::sin(input - h)))/(2*h));
-
-		return u::h;
-	}
-
-
-	int main()
-	{
-		//this variable is our starting iteration
-		double n = 0.1;
-		//I chose 18 to be an arbitrary number. It can be smaller or larger
-		for(int i = 1; i < 18; ++i)
-		{
-			//This will print out the approximation
-			std::cout << "Approximation: " << approx(1.2,n) << " ";
-			//This will print out the absolute error
-			std::cout << "Absolute Error: " << absEr(1.2) << std::endl;
-			//Each time we go through the loop, divide the iteration by 10.
-			n = n/10.0;
-			std::cout << std::endl;
-
-		}
-		return 0;
+		//This will print out the approximation
+		std::cout << "Approximation: " << approx(1.2,n) << " ";
+		//This will print out the absolute error
+		std::cout << "Absolute Error: " << absEr(1.2) << std::endl;
+		//Each time we go through the loop, divide the iteration by 10.
+		n = n/10.0;
+		std::cout << std::endl;
 
 	}
+	return 0;
+
+}
 
 ```
 
