@@ -9,7 +9,7 @@
 For example,
 
     g++ -std=c++11 bisection.cpp
-	g++ -std=c++11 fixed.cpp
+	g++ -std=c++11 fixedPointIteration.cpp
 
 will produce an executable **./a.out**, however, a better way to compile is to use `Make`, for example:
 
@@ -106,6 +106,11 @@ int main()
 }
 
 ```
+This program outputs 
+```
+The approximation for the function 3xsin(10x) is: 3.14159
+The approximation for the function xe^-x is: 0
+```
 
 The Follow is code for fixedPointIteration.cpp
 
@@ -186,8 +191,11 @@ int main()
 	std::cout << "The approximation of the function: 3xsin(10x) is: " << fixedPoint(1, [](double x){return(((3*x)*(std::sin(10*x))));}, .000001, 10000, true) << std::endl;
 	std::cout << "The approximation of the function: xe^-x is: " << fixedPoint(1, [](double x){return((x*std::exp(-x)));}, .000001, 10000, false) << std::endl;
 }
-
-
+```
+This program outputs:
+```
+The approximation for the function 3xsin(10x) is: 1.25664
+The approximation for the function xe^-x is: 8.90987e-19
 ```
 
 
