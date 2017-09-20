@@ -1,4 +1,4 @@
-# Math 4610 Fundamentals of Computational Mathematics Assignment 2
+# Math 4610 Fundamentals of Computational Mathematics Assignment 3
 
 **Routine Name:**           Approximation and Error
 
