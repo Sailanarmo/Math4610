@@ -20,7 +20,7 @@ double bisect(double a, double b, F f, double tol, int maxIter)
 	std::cout << "f_a: " << f_a << std::endl;
 	std::cout << "f_b: " << f_b << std::endl;
 
-	if(f_a * f_b >= 0.0)
+	if(f_a * f_b > 0.0)
 	{
 		std::cout << "Error computing! Exiting program!" << std::endl;
 		return 1;
@@ -56,14 +56,6 @@ int main()
 {
 	std::fesetround(FE_DOWNWARD);
 	std::cout << bisect(0.0,7.0, [](double x){return (((3*x)*(std::sin(10*x))));}, .0000001, 1000000) << std::endl;
-	//bisect(-INFINITY, INFINITY, [](double x){return ((x*std::exp(-x)));}, .001, 1000);
 	std::fesetround(FE_DOWNWARD);
-	std::cout << bisect(-10.0, 11.0, [](double x){return ((x*std::exp(-x)));}, .00000001, 1000000) << std::endl;
-
-    //double z = -100 * std::exp(100);
-
-    //double s = 110 * std::exp(-110);
-
-	//std::cout << "z: " << z << " s: " << s << std::endl;
-
+	std::cout << bisect(-100.0, 100.0, [](double x){return ((x*std::exp(-x)));}, .00000001, 1000000) << std::endl;
 }
