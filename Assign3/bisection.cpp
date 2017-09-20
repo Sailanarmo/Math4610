@@ -1,18 +1,16 @@
 #include <iostream>
 #include <cmath>
 #include <cfenv>
+#include <cstdlib>
 
 template<typename F>
 double bisect(double a, double b, F f, double tol, int maxIter)
 {
 	
-	double error = 0.0;
 	double f_a = 0.0;
 	double f_b = 0.0;
 	double f_center = 0.0;
 	double center = 0.0;
-
-	error = 10.0 * tol;
 
 	f_a = f(a);
 	f_b = f(b);
@@ -23,29 +21,30 @@ double bisect(double a, double b, F f, double tol, int maxIter)
 	if(f_a * f_b > 0.0)
 	{
 		std::cout << "Error computing! Exiting program!" << std::endl;
-		return 1;
+		return EXIT_FAILURE;
 	}
 
-	int counter = 0;
-
-	while(error > tol && counter < maxIter)
+	for(int i = 1; i < maxIter; ++i)
 	{
-
-		center = 0.5 * (a+b);
+		center = (a+b) * 0.5;
 		f_center = f(center);
 
-		if(f_a * f_center < 0.0)
+		if((f(center) == 0) || ((b-a) * 0.5 < tol))
 		{
-			b = center;
-			f_b = f_center;
+			return center;
+		}
+
+		if((f(center)>0 && f(a)>0) || (f(center)<0 && f(a)<0))
+		{
+			f_a = f_center;
+			a = center;
 		}
 		else
 		{
-			a = center;
-			f_a = f_center;
+			f_b = f_center;
+			b = center;
 		}
-		error = b-a;
-		counter++;
+	
 	}
 
 	return center;
@@ -55,7 +54,7 @@ double bisect(double a, double b, F f, double tol, int maxIter)
 int main()
 {
 	std::fesetround(FE_DOWNWARD);
-	std::cout << bisect(0.0,7.0, [](double x){return (((3*x)*(std::sin(10*x))));}, .0000001, 1000000) << std::endl;
+	std::cout << bisect(1.0,7.0, [](double x){return (((3*x)*(std::sin(10*x))));}, .00000001, 1000000) << std::endl;
 	std::fesetround(FE_DOWNWARD);
 	std::cout << bisect(-100.0, 100.0, [](double x){return ((x*std::exp(-x)));}, .00000001, 1000000) << std::endl;
 }
