@@ -1,0 +1,3 @@
+Get rest from frens
+
+#4 Implement a version of the secant method

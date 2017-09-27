@@ -1,0 +1,6 @@
+Get first 3 from frens.
+
+4. Implement a version of the secant method.
+5. Measure convergence rates using f(x) = xcos(10x) at x*=0 for Bisection, Newton's Method and the secant Method.
+6. Build a Hybrid Method using Bisection and Newton's Method
+7. Some using the Secant Method

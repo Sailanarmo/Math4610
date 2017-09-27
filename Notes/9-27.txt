@@ -1,0 +1,111 @@
+List of Routines
+	Vector Norms (1,2,inf)
+		l2Norm
+		lInfNorm
+		l1Norm
+	Error Routines
+		||x-y||_1 = /sum_i=1^n |xi-yi|
+		l1Error
+		l2Error
+		lInfError
+	Matrix Norms
+		||A||_1
+		||A||_2
+		||A||_inf
+
+Matrix inf Norm
+	matnrm = 0.0;
+
+	for(i = 1 to n)
+		sum = 0.0;
+		for(j = 1 to n)
+			sum += |a(i,j)|
+		end
+		if(sum > matnrm)
+			matnrm = sum
+	end
+
+Matrix operations
+	Matrix - vector multiplication
+		y = Ax
+
+		for (i = 1 to n)
+			y(1) = 0.0;
+			for (j = 1 to n)
+				y(i) = y(i) + a(i,j) * x(j)
+			end
+		end
+		return y
+
+Matrix - matrix mult
+scalar - matrix
+dor product
+cross-product
+transpose A^T
+add/update a matrix
+saxpy, gaxpy(LAPACK) (LINPACK)
+
+====================================================
+
+Vector Norms: unit circle in vector
+    page 75
+
+Matrix Norm:
+	1. ||A|| >= 0, ||A||=0 <-> A = 0
+	2. ||\alpaA|| = ||\alpa|| * ||A||
+	3. ||A+B|| <= ||A||+||B||
+	4. ||A*B|| <= ||A||*||B||
+
+	||A||_2 = max \frac{||A_x||_2}{||x||_2} = max ||Ax||_2
+	         ||x||_2 \dne =0                 ||x||_2 = 1
+
+Classifications of Matrices
+	1. Symmetric Matrices A^T = A
+	2. Positive Definite Matrices (\lambda_i>0)
+	3. Diagonally Dominate Matrices
+	4. Upper Triangular Matrices
+		U is upper triangular if u_i,j = 0 whenever i>j
+	5. Diagonal Matrices
+	6. Orthogonal Matrices
+		Q is orthogonal <-> Q^T=Q^-1 where Q^TQ=I
+
+Singular Value Decomposition
+	Given A \in \R^mxn, then SVD can be written as A = U\sigmaV^T where U is an mxn orthogonal matrix, V is an nxn orthogonal matrix, and \sigma is of the form:
+	\sigma = [\sigma_1 0 ... 0,
+			  0 \sigma_2 0 ..0,
+			  0 0 \sigma_3 0 0,
+			  0 0 0 . . 0 0 0 ,
+			  0 0 0 0 \sigma_n]
+
+SVD's are used in data analysis, image processing, least squares regression.
+	C = A^TA = (u\sigmaV^T)^T(U\sigmaV^T) = V\sigmaU^TU\sigmaV^T
+	= V\sigma^T\sigmaV^T
+
+Example: Suppose we want to solve an ODE (approximately)
+	detailed by
+		v'' = g(x)
+		v(0)=v_0 x =0
+		v(1)=v_1 x =1
+
+		v'' = \frac{v(x+\deltax)-2v(x)+v(x-\deltax)}{\deltax^2}
+	
+	At x_1
+	===========================================================
+		- \frac{v(x+\deltax)-2v(x)+v(x-\deltax)}{\deltax^2} = 
+		- \frac{v(x_2)-2v(x_1)+v(x_0)}{\deltax^2} =
+		- \frac{1}{\deltax^2}(v_2 - 2v_1 + v_0) = g(x_1)
+	At x_2
+	===========================================================	
+		- \frac{1}{\deltax^2}(v_3 - 2v_2 + v_1) = g(x_2)
+							.
+							.
+							.
+	At x_k
+	===========================================================
+		- \frac{1}{\deltax^2}(v_{k+1} - 2v_k + v_{k-1}) = g(k)
+							.
+							.
+							.
+	At x_{nx-1}
+	===========================================================
+		- \frac{1}{\deltax^2}(v_{nx} - 2v_{nx-1} + v_{nx-1}) = g(nx-1)
