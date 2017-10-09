@@ -1,0 +1,19 @@
+Implement a Routing and software manual
+
+Due Friday October 6th
+
+1. Vector Norm - ||*||_1
+2. Vector Norm - ||*||_2
+3. Vector Norm - ||*||_inf
+4. Matrix Norm - ||*||_1
+6. Matrix Norm - ||*||_inf
+7. Vector error - ||x-y||_1
+8. Vector error - ||x-y||_2
+9. Vector error - ||x-y||_inf
+10. Matrix Addition
+11. Matrix Subtraction
+12. Dot Product
+13. Matrix-vector Product
+14. Matrix-Matrix Product
+
+
