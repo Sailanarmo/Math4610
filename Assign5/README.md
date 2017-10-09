@@ -6,11 +6,7 @@
 
 **Language:** C++, this code can be compiled with g++ compiler or gcc.
 
-For example,
-
-    g++ -std=c++11 aprox.cpp
-
-will produce an executable **./a.out**, however, a better way to compile is to use `Make`, for example:
+The best way to compile this program is to use **make**, it is far too large of a program to type these into the command line one by one. The best way to compile is to use `Make`, for example:
 
     make release
 
