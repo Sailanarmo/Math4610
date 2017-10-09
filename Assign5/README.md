@@ -1230,4 +1230,4 @@ std::vector<std::vector<double> > MatrixProduct::matrixProd(std::vector<std::vec
 ```
 
 This code has been explained in the description in great detail.
-**Last Modified:** September/2017
+**Last Modified:** October/2017
