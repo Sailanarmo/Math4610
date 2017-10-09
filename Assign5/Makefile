@@ -1,4 +1,4 @@
-OBJS = main.cpp vectorNorm.hpp vectorNorm.cpp matrixNorm.hpp matrixNorm.cpp 
+OBJS = main.cpp vectorNorm.hpp vectorNorm.cpp matrixNorm.hpp matrixNorm.cpp vectorError.hpp vectorError.cpp matrixAddition.hpp matrixAddition.cpp matrixSubtraction.hpp matrixSubtraction.cpp dotProduct.hpp dotProduct.cpp matrixProduct.hpp matrixProduct.cpp mxv.hpp mxv.cpp
 
 CC = g++
 DEBUG_FLAGS = -O0 -g3 -fsanitize=address

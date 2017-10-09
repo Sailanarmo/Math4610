@@ -30,6 +30,8 @@ void VectorNorm::printResults()
 	std::cout << "Vector Norm 1: " << std::fixed << std::setprecision(5) << vectorNorm1(n) << std::endl;
 	std::cout << "Vector Norm 2: " << std::fixed << std::setprecision(5) << vectorNorm2(n) << std::endl;
 	std::cout << "Vector Norm Inf: " << std::fixed << std::setprecision(5) << vectorNormInf(n) << std::endl;
+	
+	n.clear();
 }
 
 double VectorNorm::randomDouble()
