@@ -1,0 +1,46 @@
+Secant Method
+
+	x_{x+1} = x_k - \frac{f(x_k)(x_k - x_{k-1})}{f(x_k)-f(x_{k-1})} for k = 0,1,2,3, ...
+
+	inputs x_0, x_1, tol maxIteration, f
+
+Theorem: if f \in C^2[a,b] and there is a root, x*, in [a,b] such that f(x*) = 0 and f'(x*) \dne 0, then there is a number \delta >0 such that starting at x_0 (and also x, for the secant method) from anywhere in the neighborhood [x*-\delta,x*+\delta] Newton's Method Converges quadratically and the Secant Method Converges super linearally.
+
+Example:
+	f(x) = xcos(10x)
+
+	start with x* = 0. Start x_0 "close" to x*=0 and make sure that x_k converges to x. Start x_0 "close" to x* = 0 and make sure that x_k converges to x*
+
+
+Varients for Newton's Method
+	Suppose x* is a root of multiplicity m>1 and we apply Newton's Method
+
+		x_{K+1} = x_k - \frac{f(x_k)}{f'(x_k)}
+
+		f(x*) = 0, f'(x*) = 0
+
+		f(x) = (x-x*)^2 q(x) where q(x*) is not a root
+		f'(x) = m(x-x*)^{m-1}q(x) + (x-x*)^m q'(x)
+
+		\frac{f(x_k)}{f'(x_k)} = \frac{(x_k-x*)^m q(x)}{m(x_k-x*)^{m-1} q(x_k) + (x_k-x*)^m q'(x_k)}
+
+		= \frac{(x_k-x*)^ q(x)}{mq(x_k) + (x_k-x*)^m q'(x_k)}
+
+Hybrid Method
+
+	|e_k| = |x_k - x*| where 0<\row\<1
+		  = \row |x_{k-1}-x*| = \row e_{k-1}
+		  = \row^2 e_{k-2}
+		          .
+				  .
+				  .
+				  .
+		  = \row^k e_k
+
+
+Build a Hybrid Method
+	Given x_0, f(x), tol, a ,b, maxIter, f'(x)
+
+	Try a Newton Step
+		-if the step fails, apply 4 iterations of Bisection
+		-if the Newton Step reduces the error, Try a Newton Step
