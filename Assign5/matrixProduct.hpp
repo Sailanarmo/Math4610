@@ -2,6 +2,7 @@
 #define MATRIX_PRODUCT_HPP
 
 #include <vector>
+#include <chrono>
 
 class MatrixProduct
 {
@@ -9,6 +10,7 @@ class MatrixProduct
 public:
 	void initProgram();
 	void printResults();
+	void printTime();
 
 	double randNumber();
 
@@ -19,6 +21,8 @@ private:
 	int rowB = 0;	
 	int colA = 0;
 	int colB = 0;
+
+	std::chrono::duration<double> time;
 		
 	std::vector<std::vector<double>> A;
 	std::vector<std::vector<double>> B;

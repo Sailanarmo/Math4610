@@ -4,6 +4,7 @@
 #include <random>
 #include <algorithm>
 #include <iomanip>
+#include <omp.h>
 
 void MatrixProduct::initProgram()
 {
@@ -54,13 +55,17 @@ void MatrixProduct::initProgram()
 
 }
 
+void MatrixProduct::printTime()
+{
+	std::cout << "Matrix took: " << time.count() << " Seconds." << std::endl;
+}
 
 void MatrixProduct::printResults()
 {
 	std::cout << std::endl;
 	std::cout << "The Matrix: " << std::endl;
 	std::cout << std::endl;
-
+/*
 	for(auto &&a: A)
 	{
 		for(auto && b: a)
@@ -87,8 +92,10 @@ void MatrixProduct::printResults()
 		}
 		std::cout << std::endl;
 	}
-
+*/
 	std::cout << std::endl;
+	
+	printTime();
 
 	A.clear();
 	B.clear();
@@ -109,7 +116,9 @@ double MatrixProduct::randNumber()
 
 std::vector<std::vector<double> > MatrixProduct::matrixProd(std::vector<std::vector<double> > &A,std::vector<std::vector<double> > &B)
 {
+	auto start = std::chrono::high_resolution_clock::now();
 	std::vector<std::vector<double> > temp(rowA, std::vector<double>(colB));
+	#pragma omp parallel for
 	for(int i = 0; i < rowA; ++i)
 	{
 		for(int j = 0; j < colB; ++j)
@@ -120,6 +129,8 @@ std::vector<std::vector<double> > MatrixProduct::matrixProd(std::vector<std::vec
 			}
 		}
 	}
+	auto end = std::chrono::high_resolution_clock::now();
+	time = end - start;
 	C = temp;
 	temp.clear();	
 	return C;

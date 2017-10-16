@@ -2,7 +2,7 @@ OBJS = main.cpp vectorNorm.hpp vectorNorm.cpp matrixNorm.hpp matrixNorm.cpp vect
 
 CC = g++
 DEBUG_FLAGS = -O0 -g3 -fsanitize=address
-RELEASE_FLAGS = -O3 -g0
+RELEASE_FLAGS = -O3 -g0 -fopenmp
 FLAGS = -std=c++14 -Wall -Wextra
 
 release: $(OBJS)
