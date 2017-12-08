@@ -48,7 +48,8 @@ int main(){
 
 **Results:** 
 ``` C++
-"Precision Float: 5.96046e-08"
+"Precision Float: 24
+"Float Error: 5.96046e-08"
 ```
 
 **Last Modification Date:** Sep. 1, 2017
