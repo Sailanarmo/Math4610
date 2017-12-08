@@ -1,12 +1,12 @@
 # Computational Mathematics Software Manual
 
-## **Routine Name:** matrixmatrix
+## **Routine Name:** Matrix Product
 
-**Author:** Nitasha Jeske
+**Author:** Raul Ramirez
 
 **Language:** C++
 
-**Description:** The matrix matrix function takes the product of two matrices by applying the dot product for each of the rows in the first matrix paired with each column in the second matrix.
+**Description:** This program will multiply two matrices together and return the time it took to compute. 
 
 **Input:**  The user will be prompted to enter row and columns of two matrices, if the sizes do not apply to the
 rules of matrix Multiplication, they will be prompted to enter new values. 
