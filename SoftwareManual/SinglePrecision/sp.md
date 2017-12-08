@@ -1,8 +1,8 @@
 # Computational Mathematics Software Manual
 
-## **Routine Name:** SMacEps
+## **Routine Name:** Single Precision
 
-**Author:** Nitasha Jeske
+**Author:** Raul Ramirez
 
 **Language:** C++
 
