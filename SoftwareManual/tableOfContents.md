@@ -1,7 +1,7 @@
 ## Table of Contents
 
 ### Precision
-1. [Single Machine Epsilon](./SMacEps.md)
+1. [Single Machine Epsilon](./SinglePrecision/sp.md)
 2. [Double Machine Epsilon](./DMacEps.md)
 
 ### Root Finding Methods
