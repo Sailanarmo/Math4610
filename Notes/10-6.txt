@@ -1,0 +1,38 @@
+Ax = b
+	-> A = LU
+
+Scaled partial pivoting
+	
+	Initialization
+
+		s_i = max|a_{ij}
+		      i <= j <= n
+		
+		\frac{|a_{q,k}|}{s_q} = max \frac{|a_{q,k}}{s_q}
+							k <= p <= n
+
+
+	Use an integer map for the permutations
+		
+		for k =1 : n-1
+			choose a point
+			interchange two integers
+			for i = k+1:n
+				for j = k+1:n
+
+		Start:
+			p = {1,2,3, ... ,n}
+			P{k}
+
+	LU-Factorization Ax=b
+	Cholesky Factorization: If A is symmetric and positive definite we can factor A into
+		A = LDL^T = RR^T = X^TX
+	Where
+		L is Lower Triangular    R is lower triangular
+		D is Diagonal		     and D has been absorbed
+							     into R.
+
+	k_p(A) = ||A||_p*||A^{-1}||_p
+	
+	If K_p(A) ~ 1, then A is said to be a well-conditioned matrix.
+	If k_p(A) >> 1, then the matrix is ill-conditioned					

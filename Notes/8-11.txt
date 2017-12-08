@@ -1,0 +1,93 @@
+Condition of a matrix:
+	
+	Ax = b => "A^{-1}b = x
+
+	when are we going to have trouble and garuntee our matrix is correct?
+
+	1. Theoretical Tools
+		A is s.p.d => Good things
+		A is Diagonally Dominant
+	2. A is non of the above
+		Use Pivoting
+
+Condition Number
+	
+	K(A) = ||A|| * ||A^{-1}||
+	
+	if K(A) ~= 1, it means it is well-conditioned
+	if K(A) > 1, it means it is ill-conditioned
+		
+Backward Error Analysis
+	
+	(A + SA)(x + Sx)=(b+Sb)
+	
+Least Squares
+	
+	Suppose we need a solution for a system:
+		
+		Ax = b
+	
+	where A \in R^{mxn}, x \in R^n, b \in R^m with m > n
+	
+Ex: Data Fitting
+
+
+	| x | x_1 | x_2 | x_3 | . . . | x_k | . . . | x_n |
+	| y | y_1 | y_2 | y_3 | . . . | y_k | . . . | y_n |
+
+
+This is equivalent to minimizing the following:
+	
+	max ||b-Ax||_2
+  x \in R^n
+
+  1. Normal Equations
+  2. Orthogonal Factorization: A = QR
+							   Q^T = Q^{-1}
+
+Normal Equations:
+	
+	r = b - Ax = residual vector
+
+Define the minimization problem as a multi-variable minimization
+
+	minimization:
+		
+		min \phi(x)   
+	 x \in R^n 
+
+	 \phi(x) = \frac{1}{2}||r(x)||_2^2 = 
+		\frac{1}{2} \sum_{i=1}^m(b_i - \sum_{j=1}^n a_{ij}x_j)^2
+
+A necessary condition for a minimizer of \psi(x) is:
+	
+	\frac{\dell}{\dellx_n}\psi(x) = 0
+
+
+	=> A^TAx = A^Tb
+
+Why is this helpful for us? 
+
+	Bx = z
+
+	B^T = (A^TA)^T = A^T(A^T)^T = A^TA
+
+if A has full rank => A^TA is positive definite.
+
+
+Alg:
+	1. Form A^TA
+	2. Form A^Tb
+	3. Apply your favorite Linear Solver
+		LU -> FS -> BS.
+
+Interpolation:
+
+	Find \fi(x) such that
+		\fi(x_n) = y_n
+
+	1. Interpolation works
+	2. Least Squares is necessary
+		
+	\fi(x) = a_j + a_1x
+	\fi(x) = a_0 + a_1x + ... + a_101x^100

@@ -2,6 +2,8 @@
 #include <vector>
 #include <fstream>
 #include <cmath>
+#include <omp.h>
+#include <chrono>
 
 #include "matrixGen.hpp"
 
@@ -12,20 +14,18 @@ std::vector<double> sol(std::vector<double> &x,std::vector<std::vector<double> >
 	double error = 10*tol;
 	int k = 0;
 	std::vector<double> x_1(A.size(),0);
-	//while(n != 0)
+	std::chrono::duration<double> time;
+	auto start = std::chrono::high_resolution_clock::now();
 	while(error > tol && k < n)
 	{
+		#pragma omp parallel for
 		for (unsigned int i = 0; i < A.size(); ++i)
 		{
 			sum = 0.0;
 			for (unsigned int j = 0; j < i; ++j)
 			{
-				//if(j != i)
-				//{
 					sum += A[i][j]*x[j];
-				//}
 			}
-			//x[i] = std::pow(x[i],k+1); 
 			x_1[i] = (b[i]-sum)/A[i][i];
 
 			for (int j = i+1; j < n; j++)
@@ -36,6 +36,7 @@ std::vector<double> sol(std::vector<double> &x,std::vector<std::vector<double> >
 		}
 		sum = 0.0;
 
+		#pragma omp parallel for
 		for(unsigned int i = 0; i < A.size(); ++i)
 		{
 			double diff = std::abs(x_1[i]-x[i]);
@@ -45,7 +46,10 @@ std::vector<double> sol(std::vector<double> &x,std::vector<std::vector<double> >
 		x = x_1;
 		k++;
 	}
-	std::cout << k << std::endl;
+	auto start = std::chrono::high_resolution_clock::now();
+	time = end - start;
+	std::cout << "Time: " << time.count() << std::endl;
+	std::cout << "k: " << k << std::endl;
 	return x;
 }
 

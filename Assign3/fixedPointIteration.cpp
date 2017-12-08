@@ -57,6 +57,6 @@ double fixedPoint(double x_0, F f, double tol, int maxIter, bool isSin)
 
 int main()
 {
-	std::cout << "The approximation of the function: 3xsin(10x) is: " << fixedPoint(1, [](double x){return(((3*x)*(std::sin(10*x))));}, .000001, 10000, true) << std::endl;
-	std::cout << "The approximation of the function: xe^-x is: " << fixedPoint(1, [](double x){return((x*std::exp(-x)));}, .000001, 10000, false) << std::endl;
+	std::cout << "The approximation of the function: sin(x) is: " << fixedPoint(1, [](double x){return std::sin(x);}, .000000001, 10000, true) << std::endl;
+	std::cout << "The approximation of the function: xe^-x is: " << fixedPoint(1, [](double x){return(-((std::sin(x)/(x))));}, .000000001, 10000, false) << std::endl;
 }

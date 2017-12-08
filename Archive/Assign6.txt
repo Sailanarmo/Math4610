@@ -1,0 +1,13 @@
+1. Implement an OpenMP version of a Matrix-Vector Multiplication that runs "faster" than
+the sequential version.
+	- Plot of the timing as a function of matrix sync (mxn)*(n*1)
+2. Implement an OpenMP version of matrix multiplication. (mxn)(nxr)
+3. Implement the LU-Factorization with scaled partial pivoting instead of partial pivoting. Make sure this is efficient.
+	
+	pragma's
+	
+	for(int i = 0; i < m; ++i)
+	{
+		
+	}
+4. Use Code from #3 to compute solutions of the linear systems posted.	

@@ -1,0 +1,80 @@
+Chapter 10 Polynomial Interpolation
+	
+	we want to find "reasonable" functions that can be use to represent some process
+
+	ex: compute
+		
+		s = \int_0^3 e^{-x^2}dx , there is no closed form anti derivative for e^{-x^2}
+
+	Instead of using f(x) = e^{-x^2}
+	we will use a taylor series expansion
+
+Def: A function y = f(x) is said to interpolate a data set {(x_i,y_i)}_i=0^n if
+	y_i = f(x_i)
+
+for i = 0...n
+
+	ex: n = 10
+
+Whi is this important?
+
+	1. We need an approximation function that provides the values of the data
+	
+	2. If we have an initial value problem or boundary value problem
+		
+		IVP, y(t_0) = y_0,y'(t_0)=y_0'
+		BVP, y(x_0) = y_0, y(x_0) = y_1
+
+	3. Finite Element Analysis
+
+Def: Suppose v(x) is some function that approximates another function f(x). v(x) ~ f(x)
+We say that v(x) is an interpolating function if
+	v(x_i) = f(x_i)
+	i = 0 .. n
+
+If v(x) is in a function space defined by span {\phi_0...\phi_n)
+We can write
+	
+	v(x) = c_0\phi_0(x) + ... + c_n\phi_n(x) = \sum_j=0^n c_j\phi_j(x)
+
+then we can determine the approximation by the coefficients c_j.
+
+If v(x) must interpolate data points
+
+	{(x_i,f(x_i)}_i=0^n = {(x_i,y_i)}_i=0^n
+
+then this means 
+	
+	v(x_0) = c_0\phi_0(x_0) + ... + c_n\phi_n(x_0) = y_0 
+	v(x_1) = c_0\phi_0(x_1) + ... + c_n\phi_n(x_1) = y_1
+	                        .
+							.
+							.
+	v(x_n) = c_0\phi_0(x_n) + ... + c_n\phi_n(x_n) = y_n 
+
+Monomial Interpolation:
+	
+	\phi_j(x) = x^j
+
+Vandermonde Matrix
+	
+	Fact: If x_0...x_n are distinct real numbers, then the Vandermonde Matrix is invertible.
+	This implies a unique solution c_0, ... , c_n exists.
+
+Theorem: For any real data {(x_i,y_i)}_i=0^n with distinct abscissa, x_i, there exists 
+a unique polynomial of degree at most n that satisfies the interpolation condition:
+
+	p(x_i) = y_i
+
+	i = 0..n and 
+	
+	p(x) = \sum_j=1^n c_jx^j
+	
+
+
+
+
+
+
+
+ 

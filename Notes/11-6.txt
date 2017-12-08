@@ -1,0 +1,112 @@
+Eigenvalues
+===================================================
+
+It is really hard to compute eigenvalues.
+
+Definition:	
+	
+	An eigenvalue is a number that satisfies Av = \lambdav \in \complex^n, A\in\complex^{nxn}
+	Associated with each eigenvalue, \lambdai \in \complex, there is a non zero vector
+	v \in \complex^n that satisfies the equation:
+		
+		Av = \lambdav = (A - \lambdaI)v = 0
+
+		which implies that the det(A - \lambdaI) = 0
+		which also implies that A - \lambdaI is singular.
+
+	Fact: Every A \in \R^{nxn} has n eigenvalues and we say that:
+		
+		{\lambda_1, \lambda_2, ... , \lambda_n}
+	
+	is the spectrum of A
+
+Example:
+
+	1. Leslie Matrix 
+		LP_0^{->} = P_1^{->}
+	
+	The largest eigenvalue of L determines if the population grows or decreases. The 
+	eigenvector associated with this gives a stable age-class distribution.
+
+	2. Structural Stability
+		
+		Euler Buckling Load.
+
+Look at estimating the largest eigenvalue in magnitude. 
+
+Notation:
+	
+	If {\lamba_1, ... , \lambda_n} then
+		
+		|\lambda_1| >= |\lambda_2| >= ... >= |\lamda_n|
+	
+	For our method we want |\lambda_1| >= |\lambda_2|. Also, we assume that A has a 
+	full set of eigenvectors. Then {v_1,v_2, ... , v_n} forms a basis for \R^n
+
+Start with a guess at the eigenvector associated with \lambda_1. If u_0 is our guess:
+
+	Au_0 =? \lambdau_0
+
+Since {v_1, ... , v_n} forms a basis we can write:
+	
+	u_0 = \beta_1v_1 + \beta_2v_2 + ... + \beta_nv_n
+	
+	Au_0 = A(\beta_1v_1 + \beta_2v_2 + ... + \beta_nv_n)
+		 = A\beta_1v_1 + A\beta_2v_2 + ... + A\beta_nv_n
+		 = \beta_1\lambda_1v_1 + \beta_2\lambda_2v_2 + ... + \beta_n\lambda_nv_n
+	A^2u_0 = \beta_1\lambda_1^2v_1 + \beta_2\lambda_2^2v_2 + ... + \beta_n\lambda_n^2v_n	
+	 
+	A^ku_0 = \beta_1\lambda_1^kv_1 + \beta_2\lambda_2^kv_2 + ... + \beta_n\lambda_n^kv_n
+	
+		   = \lambda_1^k(\beta_1v_1 + \beta_2\frac{\lambda_2}{\lambda_1}^kv_2 + ... + \beta_n\frac{\lambda_n}{\lambda_1}^kv_n)
+
+Def: The Rayleigh Quotient of v with respect to A \in \R^{nxn} is the scalar defined by:
+
+	\mew(A,v) = \frac{v^TAv}{v^Tv}
+
+If ||v||_2 = 1 => \mew(A,v) = v^TAv
+
+Suppose v = v_k = eigenvector => \mew(A_1,v_k) = \frac{v_k^TAv_k}{v_k^Tv_k} = \frac{v_k^T(\lambda_kv_k)}{v_k^Tv_k} = \lambda_k
+
+Alg: Given A \in \R^{nxn}, u_0 \in \R^n
+	
+	for k = 1,2, ... , until convergence
+		v^~ = Av_{k-1}
+		v_k = \frac{1}{||v^~||} * v^~
+
+		\lambda_1^k = v_k^TAv_k
+
+		error = |\lambda_1^k - \lambda_1^(k-1)| < tol
+	end
+
+Alg(2): Given A \in \R^{nxn}, v_0 \in \R^n
+
+	y = Av_0
+
+	for k = 1 : convergence
+		x = y/||y||
+		s = Ax
+		\lambda = x^Ts
+		y = s
+	end
+	
+Alg(3): Given A \in \R^{nxn}, v_0 \in \R^n,tol,maxIter
+	
+	y = Ax_0
+	lambdaOld = 0.0
+	error = 10*tol
+	counter = 0
+	
+	for k = 1 : convergence
+		x = y/||y||
+		s = Ax
+		lambdaNew = x^Ts
+		error = |lambdaOld - lambdaNew|
+		counter++
+		y = s
+		lambdaOld = lambdaNew
+	end
+	
+	return (lambdaNew,x)
+	
+	

@@ -1,0 +1,45 @@
+H.W Make the codes parallelized using openMP
+
+Inverse Power Iteration
+
+	If (lambda,v) is an eigenpair //an eigen value associated with an eigenvector
+	=> Av = lambda*v
+	=> v = lambda*A^-1*v
+	=> "A^-1"*v = 1/lambda*v
+
+Apply the Power Method to A^-1
+
+	Given: A, v_0, tol, maxIter
+
+	Av_0 = v_1
+	v_1 = A^-1v_0
+
+	y = "A^-1"v_0
+	counter = 0
+	error = 10*tol
+	lambdaOld = 0.0 
+
+	while(error > tol && count < maxIter)
+		
+		x = y/||y|| //if this is bigger than 1, we don't want it to blow up.
+		s = "A^-1"x
+		lamda = x^ts
+		error = |lambdaNew = lambdaOld|
+		y = s
+		lambdaOld = lambdaNew
+		counter++
+	end
+
+Two:
+
+	y = A_inversev_0
+	s = "A_inverse"x
+
+Shifting
+	Av = lambda_v
+	(A - mewI)v
+		= Av - mew_v
+		= lambda_v = mew_v
+		= (lambda - mew)v
+	lambda - mew is an eigenvalue of A - mewI
+	

@@ -1,0 +1,101 @@
+Iterative Methods:
+	Jacobi Iteraion
+	Gauss-Seidel Iteration
+
+
+Jacobi:
+
+	x_j^(k+1) = \frac{1}{a_[i,j}}(b_i - \sum_j=1^n a_{i,j}x_j^(k))
+
+	for i = 1,2,3,...,n
+
+GS:
+	
+	x_i^(k+1) = \frac{1}{a_{i,j}}[b_i - \sum_j<1a_{i,j}x_j^(k+1)-\sum_j<1a_{i,j}x_j^(k)]
+
+
+(L + D + U)x = b
+(D + U)x = b - Lx
+(D + U)x^(k+1) = b - Lx^(k)
+
+====================================================================
+
+Conjugate Gradient Methods
+
+	Suppose we start with an initial approximation x_0 + \R^n. Then search in a direction, p_n, for a better approximation.
+
+		x_1 = x_0 + \alphap_0
+	
+	Find \alpha \in \R such that x_1 is as small as possible in the direction of p_0.
+
+Initially, we will assume A is semi positive definite. Define a quadratic for m:
+	
+	\phi(x) = \frac{1}{2}x^TAx - b^Tx
+
+If x is a solution of Ax = b then
+	
+	\dell\phi = Ax - b => \dell\phi = 0
+
+If \dell\phi != 0, we see
+	
+	\dell\phi = Ax - b = r
+
+====================================================================
+
+If we choose p_k as the search direction and
+	
+	p_k = r_k
+
+	r_k = b - Ax_k
+
+To find a new approximation that is better:
+	
+	x_{k+1} = x_k + \alpha_kr_k
+
+How do we choose \alpha_k?
+
+	\phi(x_{k+1}) = \frac{1}{2}x_{k+1}^TAx_{k+1} - b^Tx_{n+1}
+	= \frac{1}{2}(x_k+\alphar_k)^TA(x_k+\alphar_k) - b^T(x_k + \alphar_k)
+
+	= -r_k^Tr_k + \alpha*r_k^T*Ar_k = 0
+
+====================================================================
+
+Graduate Alg.
+
+	Given: x_0 \in \R^n
+	tol \in \R
+	r_0 = b-Ax_0
+	\delta_0 = x_0^Tx_0 = ||x_0||_2^2
+	b_s = b^Tb = ||b||_2^2
+	k = 0
+	p_0 = r_0
+	error = 10 * tol
+	maxIter = n
+
+	while(\delta_k > tol^2 * b_S && k < maxIter)
+	{
+		\alphak = (r_k^Tr_k)/(r_k^TAr_k)
+		x_{k+1} = x_k + \alpha_kp_n
+		r_{k+1} = b - Ax_{k+1}
+		error = ||x_{k+1}-x_k||_2^2
+		p_{k+1} = r_{k+1}
+		k = k + 1
+	}
+
+	a more efficeint way
+
+	while...
+	{
+		s_k = Ap_k
+		\alpha_k = \delta_k/(r_k^Ts_k)
+		x_{k+1} = x_k + \alpha_kp_k
+		r_{k+1} = b - Ax_{k+1}
+				= b - A(x_k + \alpha_kp_k)
+				= (b - Ax_k) - \alpha_kAp_k
+				= r_k - \alpha_k - \alpha_ks_k
+		r_{k+1} = r_k - \alpha_ks_k
+		s_{k+1} = r_{k+1}^Tr_{k+1}
+		k = k+1
+		p_{k+1} = r_{k+1}
+	}

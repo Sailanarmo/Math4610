@@ -1,0 +1,37 @@
+Compare Methods: Ax = b
+
+Direct Methods:
+	
+	LU - Factorization + forward sub & back sub
+		- Pivoting Strategy
+	Cholesky Factorization + forward sub & back sub
+	
+		A = GG^T
+	
+Iterative Methods:
+	
+	Jacobi Iteration
+	Gauss-Feidel
+
+Direct Methods		Pros				Cons
+					We can count		May not work if K(A)>>1
+					the number of			K(A) = ||A||*||A^-1||
+					operations
+
+					Implement			Preconditioning is harder
+					pivoting			to do
+
+					LS-Cholesky
+
+
+Iterative Methods	Pros				Cons
+					Theses are easier   The equence of approximation
+					to implement        may not converge
+					
+					Easier to code		
+
+					We don't destroy
+					A
+
+					Preconditioning
+					is easier

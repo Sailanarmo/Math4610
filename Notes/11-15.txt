@@ -1,0 +1,44 @@
+Polynomial Interpolation
+	
+	Monomial Basis is given by {\phi_j(x) = x^j}_j=0^n
+
+This results in the vandermonde system which is usually ill-conditioned.
+
+We can turn to the langrange form of the interpolating polynomial
+by using the cardinal/basis functions
+
+	p_n(x) = \sum_j=0^n y_iL_j(x)
+
+	where
+
+	L_j(x) = { 0 i != j
+			   1 i= j  }  = \delta_{i,j}
+
+Alg:
+
+	Lagrange Form of the Interpolating Polynomial
+
+	1. Construct: Given data {(x_i,y_i)}_i^n compute the barycentric weights
+		
+		w_j = \frac{1}{\weirdpi_{i!=j}(x_j - x_i)
+
+	and also the quantities w_jy_i for i = 0...n
+
+	2. Evaluation: Given x!=x_i i = 0...n, we can evaluate
+
+		p_n(x) = gross stuff, you should really go back to notetaking by hand
+
+	3. The Newton Form of the Interpolating Polynomial
+	
+		giantPhi(x) = weirdPi_j=0^j-i(x-x_i) j = 0 ... n
+		
+		for n data points
+			phi_0(x) = 1
+			phi_1(x) = (x - x_0)
+					.
+					.
+					.
+			phi_j(x) = (x - x_0)(x-x_1)...(x-x_{j-1})
+			
+		p_n(x) = c_0 + c_1x ... c_nx^n
+				

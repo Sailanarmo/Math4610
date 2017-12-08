@@ -1,0 +1,57 @@
+The Discrete Fourier Transform (DFT)
+
+Suppose we have decided to work with 2pi-periodic functions defined on
+[0,2pi] and we define 
+
+	f(x) ~ a_0/2 + \sum_n=1^N(a_k*cos(kx) + B_k*sin(kx))
+	~ \sum_k=-M^M c_k*e^{ik_x} 
+	=> c_k = 1/2pi \int_0^2pi f(t)*e^{-ikt} dt
+
+We will approximate the integral for c_k using a simple Trapezoid rule.
+In reality we will use a composite Trapezoid rule to compute an approximation
+on n equal sized intervals.
+
+	1\2pi \int_0^2pi F(t) dt ~ A_1 + A_2 + A_3 + ... + A_n
+	
+	=
+
+	h\2pi(F(0) + F(h) + ... + F((n-1)h)) 
+	
+	= 
+	
+	\frac{\frac{2pi}{n}}{2pi} \sum_j=0^{n-1} F(jh) = 1\n \sum_j=0^{n-1} F(jh)
+
+	=
+
+	1\n \sum_j=0^{n-1} F(2pij\n) * e^{-i(2pij_k\n)}
+
+	Let y_j = F(2pij\n)
+
+	c_k = y_k
+
+	w = e^{2pii\n} => w~ = e^{-2pii\n}
+
+	y_k = 1\n \sum_j=0^{n-1} y_j w~^{j_k}
+
+	Def: Let y = {y_j}_j=-inf^inf \in S_n
+
+	The Discrete Fourier Transform (DFT) of y is the sequence
+
+
+Is there a way to speed up the DFT? Yes!
+
+Suppose we know n is even and write N = n/2 => n = 2N
+
+	y_k = \sum_j=0^{2n-1} y_j*w~^{jk}
+
+	=
+	
+	\sum_j=0^{N-1} y_{2j}*w~^{2jk} + \sum_j=0^{N-1} y_{2j+1}*w~^{(2j+1)k}
+
+	=
+
+	\sum_j=0^{N-1} y_{2j}*w~^{2jk} + w~^k*\sum_j=0^{N-1} y_{2j+1}*w~^{2jk}
+
+	=
+
+	weirdF_N[[y_0,y_2,y_4, ... ,y_2n]] + w~^k*weirdF_N[[y_1,y_3,...,y_2n-1]]

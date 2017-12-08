@@ -1,0 +1,10 @@
+#1 implement a code to determine an interpolating polynomial given a data set:
+
+in two steps:
+	a) resuable code to compute the different table and return the 
+	coefficients of the Newton Form
+
+	b) reusable code for evaluation of the polynomial at a vector
+	of points not in the data set. 
+
+#2. Google Richardson's Problem on interpolation and test your code on this.

@@ -1,0 +1,41 @@
+Conjugate Gradient Methods
+	
+	LINPACK/LAPACK
+	SAxPY -> y <-Ax+b
+	GAxPY
+
+	P_{k+1}^T*Ap_k = 0
+
+If Ax = b is ill-conditioned
+	
+	=> K(A) >> 1
+	(K(A)>=1)
+
+ex.  K(I_n) = 1
+
+p_0 = r_0 = b-A_x0
+b_s = b^Tb
+S_0 = r_0^Tr_0
+
+	while S_k > tol^2 * b_S
+		s_k = A_pk
+		/alpha_k = S_k/(p_n^T*S_k)
+		x_{k+1} = x_k + /alpha_k*p_k
+		r_{k+1} = r_k - /aplha_k*S_k
+		s_[k+1} = r_{k+1}^Tr_{k+1}
+		p_{k+1} = h_{k+1} + \frac{S_{k+1}}{S_k}p_k
+		k = h + 1
+	end
+
+	//we need to choose P so that P^{-1} is "easy" to compute
+
+	Preconditioning 
+	
+	Ax = b => P^{-1}Ax = P^{-1}b
+		K(P^{-1}A) ~ 1
+
+	P = A => A^{-1}Ax = A^{-1}b => x=A^{-1}b
+
+
+
+

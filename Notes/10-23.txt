@@ -1,0 +1,140 @@
+Iterative Methods
+
+These methods Generate a possibly infinite sequence of approximations of 
+x \in \R^n satisfying Ax = b. 
+
+Jacobian Iteration
+Gauss - Feidel 
+
+========================================================================
+
+We take A \in R^{nxn} and write this as a sum:
+
+	A = L + D + U
+
+Now we can play with the Algebra
+
+	Ax = (L + D + U)x = b
+	Dx = b (L + U)x
+	 x = D^{-1}(b - (L+U)x)
+
+This suggest and Iteration Scheme:
+
+	Given our matrix A \in \R^{nxn}, b \in R^n, x_0 \in \R^n, tol \in \R,
+	maxiter
+
+	x_1 = D^{-1}(b - (L+U)x_0)
+	x_2 = D^{-1}(b - (L+U)x_1)
+				.
+				.
+				.
+	x_{n+1} = D^{-1}(b - (L+U)x_{n+1})
+
+	{x_0,x_1, ... , x_n, x_{n+1}, ... }
+
+	x_n -> x
+
+	where x = "A^{-1}"b
+
+========================================================================
+
+What would the code look like?
+	
+	for i = 1 to n
+		x_1(i) = b(i)
+	end
+	for i = 1 to n
+		x_1(i) = x_1(i) - \sum_{j=1}^{i-1} a_{i,j} * x_1(j) - \sum_{j=i+1} * x_1(j)
+	end
+	for i = 1 to n
+		x_1(i) = x_1(i)/a_{i,j}
+	end
+
+			
+========================================================================
+
+	for i = 1 to n
+		x_1(i) = b(i)
+	end
+	
+	for i = 1 to n
+		for j = 1 to n
+			x_1(i) = x_1(i) = x_1(i) - a_{i,j}*x_0(j)
+		end
+		for j = i+1
+			x_1(i) = x_1(i) - a_{i,j}*x_0(j)
+		end
+	end
+
+
+========================================================================
+
+	for i = 1 to n
+		x_1(i) = x_1(i)/a_{i,j}
+	end
+
+	sum = 0.0;
+
+	for i = 1 to n
+		diff = abs(x_1(i) - x_0(i))
+		sum = sum + diff * diff
+	end
+	error = sqrt(sum)
+	
+	for i = 1 to n
+		x_0(i) = x_1(i)
+	end
+
+========================================================================
+
+Gauss Seidel
+
+	Ax = (L + D + U)x = b
+	(D+U)x = b-Lx
+	x = (D+U)^{-1}(b-Lx)
+	
+	counter++;
+
+	for i = 1 to n
+		x_1(i) = b(i)
+	end
+
+	for i = 1 to n
+		for j = 1 to i-1
+			x_1(i) = x_1(i)-a_{i,j}*x_0(j)
+		end
+	end
+
+	
+========================================================================
+
+	x_1(n) = x_1(n)/a_{n,n}
+
+	for i = n:-1:1
+		sum = 0.0
+		for j = i+1 to n
+			sum = sum + a_{i,j}*x_1(j)
+		end
+		x_1(i) = sum/a_{i,j}
+	end	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

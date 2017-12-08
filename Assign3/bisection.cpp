@@ -52,7 +52,7 @@ double bisect(double a, double b, F f, double tol, int maxIter)
 int main()
 {
 	std::fesetround(FE_DOWNWARD);
-	std::cout << "The approximation for the function 3xsin(10x) is: " << bisect(1.0,7.0, [](double x){return (((3*x)*(std::sin(10*x))));}, .00000001, 1000000) << std::endl;
+	std::cout << "The approximation for the function sin(x) is: " << bisect(-10.0,10.0, [](double x){return std::sin(x);}, .000000001, 1000000) << std::endl;
 	std::fesetround(FE_DOWNWARD);
-	std::cout << "The approximation for the function xe^-x is: " << bisect(-100.0, 100.0, [](double x){return ((x*std::exp(-x)));}, .00000001, 1000000) << std::endl;
+	std::cout << "The approximation for the function -sinx/x is: " << bisect(-10.0, 10.0, [](double x){return (-(std::sin(x)/(x)));}, .000000001, 1000000) << std::endl;
 }

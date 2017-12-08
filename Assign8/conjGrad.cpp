@@ -1,12 +1,16 @@
 #include <iostream>
 #include <vector>
 #include <fstream>
+#include <chrono>
+#include <omp.h>
 
 #include "matrixGen.hpp"
 
 
 std::vector<double> conjGrad(std::vector<std::vector<double> > &A, std::vector<double> &b)
 {
+	std::chrono::duration<double> time;
+	auto start = std::chrono::high_resolution_clock::clock::now();
 	double tol = 1.0e-10;
 
 	int n = A.size();
@@ -15,7 +19,7 @@ std::vector<double> conjGrad(std::vector<std::vector<double> > &A, std::vector<d
 	std::vector<double> r = b;
 	std::vector<double> p = r;
 	int k = 0;
-
+	#pragma omp parallel while
 	while (k < n)
 	{
 		std::vector<double> rOld = r;
@@ -33,7 +37,10 @@ std::vector<double> conjGrad(std::vector<std::vector<double> > &A, std::vector<d
 		p = vecComb(1.0,r,beta,p);
 		k++;
 	}
-
+	auto end = std::chrono::high_resolution_clock::clock::now();
+	time = end - start;
+	std::cout << "Time: " << time.count() << std::endl;
+	std::cout << "Count: " << k << std::endl;
 	return x;
 }
 

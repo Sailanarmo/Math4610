@@ -1,0 +1,84 @@
+Least Squares Problem:
+
+Normal Equations: 
+
+	A^TAx = A^Tb
+
+	B = A^TA
+	C = A^Tb
+
+	Bx = C
+
+Theorem: If A has full column rank, then A^TA is Positive Definite.
+
+"Proof" If x^TBx > 0 for all x \in \R^n is true, then B is Positive Definite. 
+
+	x^TAAx = (Ax)^TAx = y^Ty = ||y||_2^2 > 0
+
+LDL^T = LD^{1/2}D^{1/2}L^T
+
+=================================
+
+Cholesky Alg.
+
+	Given a Semi-Positive Definite Matrix, A, then the following Algorithm overwrites it's 
+	lower part with the Cholesky Factor G.
+
+	for k = 1 : n-1
+		a_{KK} = \sqrt{a_{kjk}
+		for i = k+1 : n
+			a_{i,k} = \frac{a_{ik}}{a_{k,j}}
+		end
+		for j = k+1 : n
+			for i = k+1:n
+				a_{i,j} = a_{i,j} - a_{i,k} * a_{j,k}
+			end
+		end
+	end
+
+	a_{k,n} = \sqrt{a_n,n}
+
+	return A
+
+
+==================================
+
+For the Normal Equations
+
+	A^TAx = A^TB
+
+the method of choice is to use a Cholesky Factorization plus forward Substitution and back
+substitution to find a solution.
+
+Second Methodology for Least Squares is to use Orthogonal Transforms or Orthogonal Factorization.
+
+If we want to solve:	
+	
+	Ax = b
+
+	A = QR
+
+Where Q is an Orthogonal Matrix:
+	
+	Q^T = Q^{-1}
+	
+	Q^TQ = I
+
+	Ax = b => QRx = b => Q^TQRx = Q^Tb
+
+	Rx = Q^Tb
+
+Can we compute QR Factorization of a Matrix?
+	
+	Yes.
+
+If A has full column rank:
+
+	A = [ a_1, a_2, a_3, ... , a_n ], where a are columns.
+
+	The span of { a_1, a_2, ... , a_n } = \R^n
+
+We can apply the Gram-Schmidt Process algorithm to the columns of A to form a new orthogonal 
+basis from A.
+
+	

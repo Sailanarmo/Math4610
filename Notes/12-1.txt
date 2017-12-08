@@ -1,0 +1,48 @@
+FFT: So find
+
+	f(t) = \sum_k=-inf^inf c_ke^{ikt} 
+
+The next step is to approximate the integral for c_k using the Trapezoid rule.
+
+c_k ~ 1\2pi * h *(1\2(F(0)+F(h))+1\2(F(h)+F(2h))+ ... +1\2(F(n-1)h)+F(nh))
+
+	F(0) = F(n)h=F(2pi)
+
+	= 1\2pi(2pi\n)*\sum_j=0^{n-1} F(jh)
+
+	= 1\n \sum_j=0^{n-1} f(2pij\h)*e^{ik(-2pij\n)}
+
+	= 1\n \sum_j=0^{n-1} f(2pij\h)*e^{-2pi*i\n*jk}
+
+	let w = e^{-2pi*i/n}
+
+	= 1\n \sum_j=0^{n-1} y_j*w^{j*k} = y`_k = c_k
+
+Properties:
+	
+	1. weirdF_n: S_n -> S_n is linear
+	   weirdF_n[y+x] = weirdF_n[y]+weirdF_n[x]
+	   weirdF_n[alpa*y] = alpha*weirdF_n[y]
+	
+	2. The inverse is easy to compute
+
+	3) Shift: If y \in S_n and z_k=y_{k+1}
+		then 
+		weirdF_n[z]_j = w^j*weirdF[y]_j
+
+	4. Convolution If y \in S_n and z \in S_n
+		then the sequence defined by
+			
+		[y*z]_k := \sum_j=0^{n-1}*y_j*z_{k-1}
+
+		is also in S_n
+
+	5. weirdF[y*z]_k = weirdF[y]_k*weirdF[z]_k
+
+	6. y \in S_n is a sequence is read #s
+
+		weirdF_n[y]_{n-k} = weirdF_n[y]_k
+
+
+
+
