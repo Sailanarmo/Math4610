@@ -8,9 +8,9 @@
 
 **Description:** We were given the following functions to evaluate with both the Bisection Method and the Fixed Point Iteration Method: `3xsin(10x)` and `x*e^-x`. The Bisection method divides the problem in half every time and will return a root when one is found.  
 
-**Input:** The inputs for this program are double a, double b, Function f, double tol and int maxIter. a and b are the left and right bounds for the interval, respectively. The Function f represents which function will be used to determine roots, as long as the function is declared and defined. Double tol is a measure of accuracy of the root, and int maxIter sets a maximum number of iterations for the interval to be divided if the tolerance is not met first. 
+**Input:** There are no user inputs that are needed from the user. All the inputs are handled within their own functions. 
 
-**Output:** The program will provide a double which is the first root it finds in the function on the interval, or print an error message telling the user to input a valid function or different interval. 
+**Output:** The program will provide a double.
 
 **Code:**
 ```C++
@@ -93,4 +93,4 @@ int main()
 "The approximation for the function -sinx/x is: 1"
 ```
 
-**Last Modification Date:** Sep. 14, 2017
+**Last Modification Date:** September 2017
