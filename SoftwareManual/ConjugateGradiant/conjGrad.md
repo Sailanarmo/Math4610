@@ -6,11 +6,11 @@
 
 **Language:** C++
 
-**Description:** Conjugate Gradient is an iterative method to solve a linear system of equations, Ax=b. Using the properties of gradients, this algorithm takes a direction from the starting point and continues iterating in an orthogonal direction until a fixed point is reached. It uses the 2 norm to calculate an error, and uses a tolerance or a max number of iterations to determine the fixed point.
+**Description:** Conjugate Gradient is an iterative matrix to attempt to solve Ax=b. 
 
-**Input:**  The input is a symmetric positive definite matrix of size n x n (A), a resulting vector of size n (b), an initial guess vector of size n (x0), a tolerance, and maximum number of iterations.
+**Input:**  There are no user inputs, the various functions are handled inside with various parameters.
 
-**Output:** The solutions will print out to a file.
+**Output:** The solution to Ax = b will print out to a file.
 
 **Code:**
 ```C++
