@@ -6,11 +6,11 @@
 
 **Language:** C++
 
-**Description:** This routine is a hybrid of Bisection and Newton's method. When Newton's encounters a zero derivative or a sequence that is not converging, instead of printing out an error, it calls a revised form of the bisection method to bisect the given interval 4 times and uses the last midpoint as the new guess. 
+**Description:** This is Newtons method but with a Bisection method inserted. If Newton's method returns a zero, it will bisect the function again, and attempt to return a new approximation of the root.  
 
-**Input:** x0 is the initial guess at the root, a and b are the endpoints of the interval, f and df indicate the desired fucntion and derivative, tol is the allowed tolerance and maxIter is the max number of iterations to be run.
+**Input:** There are no user inputs.
 
-**Output:** The output is an approximation to the root of type double.
+**Output:** The output is the approximation of the root. 
 
 **Code:**
 ```C++
