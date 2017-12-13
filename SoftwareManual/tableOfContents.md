@@ -34,7 +34,7 @@
 
 ### Parallel Implementations on Iterative Methods
 1. [Jacobi](./ParallelJacobi/parJac.md)
-2. [Gauss-Seidel](./ParallelGauss/parGau.md.md)
+2. [Gauss-Seidel](./ParallelGauss/parConj.md)
 3. [Conjugate Gradient](./ParallelConjGrad/parConj.md)
 
 ### Eigenvalue Methods
