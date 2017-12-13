@@ -6,7 +6,8 @@
 
 **Language:** C++
 
-**Description:** This is a simple version of Newton's method without any bells or whistles. It takes the initial guess given and evaluates the function and derivative to find a closer approximation to the root with each iteration of the loop, until a desired tolerance is met or the max number of iterations is met. 
+**Description:** This is a newton method without any guards to safe guard the program, this is assuming the user will not
+do anything dumb on their end. 
 
 **Input:** x0 is the initial guess at the root, f and df indicate the desired fucntion and derivative, tol is the allowed tolerance and maxIter is the max number of iterations to be run. 
 
@@ -51,4 +52,4 @@ int main()
 Newton's approx: -9.38962e-14
 ```
 
-**Last Modification Date:** Sep. 30, 2017
+**Last Modification Date:** September 2017
