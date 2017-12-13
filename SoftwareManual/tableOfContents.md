@@ -38,15 +38,14 @@
 3. [Conjugate Gradient](./ParallelConjGrad/parConj.md)
 
 ### Eigenvalue Methods
-1. [Power Method](./PowerM.md)
-2. [Inverse Power Method](./invPowerM.md)
-
-### Eigenvalue Methods using Open MP
-1. [Power Method](./OMPPowerM.md)
-2. [Inverse Power Method](./OMPinvPowerM.md)
+1. [Power Method](./PowerMethod/power.md)
+2. [Inverse Power Method](./InversePM/inverse.md)
 
 ### Polynomial Interpolation
-1. [Divided Difference Table](./DividedDiffTable.md)
-2. [Polynomial Interpolation](./PolyInterp.md)
+1. [Divided Difference Table](./DividedDifference/divided.md)
+2. [Polynomial Interpolation](./PolyInter/poly.md)
+
+### Fast Fourier Transform
+1. [FFT](./FFT/fft.md)
 
 
