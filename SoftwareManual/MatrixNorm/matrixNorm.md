@@ -119,4 +119,4 @@ Matrix Norm 1: 704.392
 Matrix Norm Inf: 660.233
 ```
 
-**Last Modification Date:** Oct. 3, 2017
+**Last Modification Date:** October 2017
