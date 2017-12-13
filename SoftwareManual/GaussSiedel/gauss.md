@@ -1,14 +1,14 @@
 # Computational Mathematics Software Manual
 
-## **Routine Name:** GaussSeidel
+## **Routine Name:** Gauss Seidel
 
-**Author:** Nitasha Jeske
+**Author:** Raul Ramirez
 
 **Language:** C++
 
-**Description:** Gauss-Seidel is an iterative method to solve a linear system of equations, Ax=b. Using the properties of linear algebra, this algorithm calculates (D+U)^-1(b-Lx) and uses the 2 norm to calculate an error, then iterates until it reaches the desired tolerance or hits a maximum number of iterations. 
+**Description:** Gauss-Seidel is an iterative method to solve the equation Ax = b. This is a far more efficient version than jacobi iterative method.
 
-**Input:**  The input is a symmetric positive definite matrix of size n x n (A), a resulting vector of size n (b), an initial guess vector of size n (x0), a tolerance, and maximum number of iterations.
+**Input:**  There is no user input, but the function sol, takes a Matrix A, a vector b, a guess vector x, and the number of iterations desired. 
 
 **Output:** The output is printed to a file with all the solutions. 
 
@@ -64,4 +64,4 @@ int main()
 }
 ```
 
-**Last Modification Date:** Nov. 12, 2017
+**Last Modification Date:** Nov 2017
