@@ -96,4 +96,4 @@ Vector Error 2: 434.90037
 Vector Error Inf: 261.37378
 ```
 
-**Last Modification Date:** Oct. 3, 2017
+**Last Modification Date:** October 2017
