@@ -8,7 +8,6 @@
 
 **Description:**  This is a parallelized version of Gauss-Seidel, this is a much harder version to implement but it can be done. 
 
-
 **Input:** No user input, but it does take a Matrix A, a vector b, a guess vector x, and the number of iterations to perform. 
 
 **Output:** This outputs the time and the number of iterations it went through, and outputs the solved vector to a file.
