@@ -6,7 +6,7 @@
 
 **Language:** C++
 
-**Description:** The matrix difference function takes two matrices and subtracts the corresponding i,j entries to make a new matrice. 
+**Description:** The matrix difference function takes two matrices and subtracts the corresponding i,j entries to make a new matrix. 
 
 **Input:**  The user will be prompted to enter the size of an n by n matrix to subtract. 
 
@@ -128,4 +128,4 @@ The Matrix:
    863.859    995.309 
 ```
 
-**Last Modification Date:** Oct. 3, 2017
+**Last Modification Date:** October 2017
