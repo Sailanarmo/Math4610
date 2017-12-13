@@ -9,9 +9,9 @@
 **Description:** This is a newton method without any guards to safe guard the program, this is assuming the user will not
 do anything dumb on their end. 
 
-**Input:** x0 is the initial guess at the root, f and df indicate the desired fucntion and derivative, tol is the allowed tolerance and maxIter is the max number of iterations to be run. 
+**Input:** There are no user inputs for the program.
 
-**Output:** The output is an approximation to the root of type double.
+**Output:** The output is an approximation of the root.
 
 **Code:**
 ```C++
