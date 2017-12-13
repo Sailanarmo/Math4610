@@ -100,4 +100,4 @@ Vector Norm 2: 1052.04841
 Vector Norm Inf: 890.37826
 ```
 
-**Last Modification Date:** Oct. 3, 2017
+**Last Modification Date:** October 2017
