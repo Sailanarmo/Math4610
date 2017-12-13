@@ -157,4 +157,4 @@ Please enter columns of Matrix B: 2
 Matrix took: 0.00500732 Seconds. 
 ```
 
-**Last Modification Date:** Oct. 3, 2017
+**Last Modification Date:** October 2017
