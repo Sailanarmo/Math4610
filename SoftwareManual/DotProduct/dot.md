@@ -1,6 +1,6 @@
 # Computational Mathematics Software Manual
 
-## **Routine Name:** dotprod
+## **Routine Name:** Dot Product
 
 **Author:** Raul Ramirez
 
