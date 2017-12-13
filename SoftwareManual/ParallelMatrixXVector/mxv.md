@@ -6,11 +6,11 @@
 
 **Language:** C++
 
-**Description:** The matrix vector function multiplies a matrix by a vector by running through a nested for loop and in simple terms calculates the dot product for each row in the matrix. This routine is coded to run in Open MP on multiple processors in order to speed up the computing time. 
+**Description:** This is a parallelized version of MatrixXVector. It uses OpenMP to speed up the computations.
 
-**Input:**  The user will be prompted to ente the size of a vector and a matrix. 
+**Input:**  The user will be prompted to enter the size of a vector and a matrix. 
 
-**Output:** The routine provides a vector of type double with the dimensions: rows of matrix x 1, and prints out the time it takes to compute the vector.
+**Output:** This will return the time it took to compute the matrix.
 
 **Code:**
 ```C++
@@ -125,4 +125,4 @@ Please enter columns of Matrix A: 1000
 Matrix took: 0.000459182 Seconds.  
 ```
 
-**Last Modification Date:** Oct. 18, 2017
+**Last Modification Date:** October 2017
