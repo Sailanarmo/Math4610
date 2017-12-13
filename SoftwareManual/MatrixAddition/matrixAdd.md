@@ -128,4 +128,4 @@ std::vector<std::vector<double> > MatrixAdd::matrixAdd(std::vector<std::vector<d
 "  -192.719    3.48212" 
 ```
 
-**Last Modification Date:** Oct. 3, 2017
+**Last Modification Date:** October 2017
