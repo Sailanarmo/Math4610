@@ -1,6 +1,6 @@
 # Computational Mathematics Software Manual
 
-## **Routine Name:** Hnewton
+## **Routine Name:** Hybrid Newton
 
 **Author:** Raul Ramirez
 
