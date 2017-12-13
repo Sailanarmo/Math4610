@@ -6,11 +6,12 @@
 
 **Language:** C++
 
-**Description:** This version of Newton's method contains checks to make sure the initial guess is valid with the given function. It will approximate the root by evaluating the function and derivative at the inital guess, and take that value to be the new guess. While doing that, the routine checks to make sure the derivative is non-zero and the sequence is converging within the interval. 
+**Description:** This is the safer version of Newtons method. This will abort the current function and return the user back
+so they may do another computation if they wish. 
 
 **Input:** x0 is the initial guess at the root, f and df indicate the desired fucntion and derivative, tol is the allowed tolerance and maxIter is the max number of iterations to be run. 
 
-**Output:** The output is an approximation to the root of type double, or an error message telling you to pick a different initial guess. 
+**Output:** The output is an approximation to the root. 
 
 **Code:**
 ```C++
@@ -67,4 +68,4 @@ Newton's approx: 3.76991
 
 ```
 
-**Last Modification Date:** Sep. 30, 2017
+**Last Modification Date:** September 2017
