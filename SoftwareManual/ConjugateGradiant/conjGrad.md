@@ -69,4 +69,4 @@ int main()
 }
 ```
 
-**Last Modification Date:** Nov. 12, 2017
+**Last Modification Date:** November 2017
