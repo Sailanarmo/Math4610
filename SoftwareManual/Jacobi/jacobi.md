@@ -6,11 +6,11 @@
 
 **Language:** C++
 
-**Description:** Jacobi iteration is an iterative method to solve a linear system of equations, Ax=b. Using the properties of linear algebra, this algorithm calculates D^-1(b-(L+U)x) and uses the 2 norm to calculate an error, then iterates until it reaches the desired tolerance or hits a maximum number of iterations. 
+**Description:** Jacobi iteration is an iteration matrix meant to attempt to solve Ax = b. 
     
-**Input:**  The input is a symmetric positive definite matrix of size n x n (A), a resulting vector of size n (b), an initial guess vector of size n (x0), a tolerance, and maximum number of iterations.
+**Input:**  There are no user inputs for this program, as the program will handle the various arguments passed in the function parameters.
 
-**Output:** The solutions are printed out to a file. 
+**Output:** The solution to Ax = b is printed out to a text file. 
 
 **Code:**
 ```C++
@@ -85,4 +85,4 @@ int main()
 }
 ```
 
-**Last Modification Date:** Nov. 12, 2017
+**Last Modification Date:** November 2017
