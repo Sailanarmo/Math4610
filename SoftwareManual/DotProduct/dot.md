@@ -82,4 +82,4 @@ double DotProduct::randomDouble()
 "[ 0.13688 -3.36491 4.65768 ] * [ -6.02876 7.54759 9.49463 ] = 18.00078"
 ```
 
-**Last Modification Date:** Oct. 3, 2017
+**Last Modification Date:** October 2017
