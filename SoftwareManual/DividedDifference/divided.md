@@ -1,6 +1,6 @@
 # Computational Mathematics Software Manual
 
-## **Routine Name:** DividedDiffTable
+## **Routine Name:** Divided Difference Table
 
 **Author:** Raul Ramirez
 
