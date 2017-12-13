@@ -128,4 +128,4 @@ Bisect/Newton Hybrid approx: -2.74063e-15
 
 ```
 
-**Last Modification Date:** Sep. 30, 2017
+**Last Modification Date:** September 2017
