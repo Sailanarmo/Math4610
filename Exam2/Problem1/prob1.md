@@ -10,8 +10,8 @@ Using the Jacobi and Gauss iterations from previous homework assignments, the fo
 int main()
 {
 	std::vector<std::vector<double> > A = { {10.0, 1.0, 1.0},
-											{1.0, 10.0, 1.0},
-											{1.0, 1.0, 10.0} };
+						{1.0, 10.0, 1.0},
+						{1.0, 1.0, 10.0} };
 	std::vector<double> x = {0.0,0.0,0.0};
 	std::vector<double> b = {12.0,12.0,12.0};
 	
