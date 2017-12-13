@@ -6,11 +6,11 @@
 
 **Language:** C++
 
-**Description:** The matrix matrix function takes the product of two matrices by applying the dot product for each of the rows in the first matrix paired with each column in the second matrix. This routine is coded to run in Open MP on multiple processors in order to speed up the computing time. 
+**Description:** This is a parallelized version of Matrix X Matrix. This uses OpenMP to speed up the computations of the Matrix Multiplications.  
 
-**Input:**  The user will be asked to enter the size of a matrix to multiply. 
+**Input:**  The user will be asked to input the size of an n by n matrix.
 
-**Output:** The routine provides a vector of vector of doubles which has the dot product values as the entries, and prints out the time it takes to compute the resulting matrix.
+**Output:** This will return the time it took to computer the multiplication.
 
 **Code:**
 ```C++
@@ -155,4 +155,4 @@ Matrix took: 0.0024552 Seconds.
 
 ```
 
-**Last Modification Date:** Oct. 18, 2017
+**Last Modification Date:** October 2017
