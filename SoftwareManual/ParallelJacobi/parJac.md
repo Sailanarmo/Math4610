@@ -6,13 +6,11 @@
 
 **Language:** C++
 
-**Description:** This is a parallelized version of the Jacobi iteration, since Jacobi is easily parallelizable,
-this code runs really effeciently. 
+**Description:** This is a parallelized version of the Jacobi iteration, it is implemented in OpenMp and is another attempt to solve Ax = b. 
+    
+**Input:**  There are no user inputs for this program, as the program will handle the various arguments passed in the function parameters.
 
-
-**Input:**  Again, there are no user inputs, but the functions do take a Matrix, a vector b, a guess vector x, and how many iterations the user wants to have.
-
-**Output:** This outputs the time and how many iterations it took.
+**Output:** The solution to Ax = b is printed out to a text file. 
 
 **Code:**
 ```C++
