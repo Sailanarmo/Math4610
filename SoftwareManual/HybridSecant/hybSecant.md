@@ -6,11 +6,12 @@
 
 **Language:** C++
 
-**Description:** This routine is a hybrid of Bisection and secant method. When secant method encounters a zero derivative or a sequence that is not converging, instead of printing out an error, it calls a revised form of the bisection method to bisect the given interval 4 times and uses the last midpoint as the new guess. 
+**Description:** This routine is similar to Newton's Method, however, when the Secant Method discovers a 0, it will bisect the function
+again to return a new root. 
 
-**Input:** x0 and x1 are the initial guesses at the root, a and b are the endpoints of the interval, f indicates the desired fucntion, tol is the allowed tolerance and maxIter is the max number of iterations to be run.
+**Input:** There are no user inputs.
 
-**Output:** The output is an approximation to the root of type double.
+**Output:** The output is an approximation of the root.
 
 **Code:**
 ```C++
@@ -136,4 +137,4 @@ int main()
 "Bisect/Secant Hybrid approx: -2.32698e-12"
 ```
 
-**Last Modification Date:** Sep. 30, 2017
+**Last Modification Date:** September 2017
