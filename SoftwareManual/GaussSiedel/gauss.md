@@ -6,11 +6,11 @@
 
 **Language:** C++
 
-**Description:** Gauss-Seidel is an iterative method to solve the equation Ax = b. This is a far more efficient version than jacobi iterative method.
+**Description:** Gauss-Siedel iteration is an iteration matrix meant to attempt to solve Ax = b, it is far more efficient than the Jacobi iteration.. 
+    
+**Input:**  There are no user inputs for this program, as the program will handle the various arguments passed in the function parameters.
 
-**Input:**  There is no user input, but the function sol, takes a Matrix A, a vector b, a guess vector x, and the number of iterations desired. 
-
-**Output:** The output is printed to a file with all the solutions. 
+**Output:** The solution to Ax = b is printed out to a text file. 
 
 **Example:**
 
@@ -64,4 +64,4 @@ int main()
 }
 ```
 
-**Last Modification Date:** Nov 2017
+**Last Modification Date:** November 2017
