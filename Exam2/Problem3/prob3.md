@@ -1,4 +1,4 @@
-#Math 4610 Exam2 Take Home
+# Math 4610 Exam2 Take Home
 
 ## Raul Ramirez
 
