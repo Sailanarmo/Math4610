@@ -13,29 +13,29 @@
 6. [Hybrid Newton with Bisection](./HybridNewton/hybNewton.md)
 7. [Hybrid Secant with Bisection](./HybridSecant/hybSecant.md)
 
-### Linear Algebra Computations
+### Matrix Computations
 1. [Vector Norm](./VectorNorm/vectorNorm.md)
 2. [Matrix Norm](./MatrixNorm/matrixNorm.md)
 3. [Vector Error](./VectorError/vectorError.md)
-4. [Matrix Addition](./MatrixAddition/matrixAddition.md)
-5. [Matrix Subtraction](./MatrixSubtraction/matrixSubtraction.md)
+4. [Matrix Addition](./MatrixAddition/matrixAdd.md)
+5. [Matrix Subtraction](./MatrixSubtraction/matrixSub.md)
 6. [Dot Product](./DotProduct/dot.md)
 7. [Matrix-Vector Multiplication](./MatrixVectorMult/mxv.md)
 8. [Matrix-Matrix Multiplication](./MatrixMatrixMult/matrixProd.md)
 
-### Linear Algebra Computations Using Open MP
-1. [Matrix-Vector Multiplication](./OMPmatrixvec.md)
-2. [Matrix-Matrix Multiplication](./OMPmatrixmatrix.md)
+### Parallel Matrix Computations
+1. [Matrix-Vector Multiplication](./ParallelMatrixXVector/mxv.md)
+2. [Matrix-Matrix Multiplication](./ParallelMatXMat/pMatxMat.md)
 
-### Solve Linear Systems: Iterative Methods
-1. [Jacobi](./Jacobi.md)
-2. [Gauss-Seidel](./GaussSeidel.md)
-3. [Conjugate Gradient](./ConjGrad.md)
+### Iterative Methods
+1. [Jacobi](./Jacobi/jacobi.md)
+2. [Gauss-Seidel](./GaussSiedel/gauss.md)
+3. [Conjugate Gradient](./ConjugateGradiant/conjGrad.md)
 
-### Solve Linear Systems: Iterative Methods Using Open MP
-1. [Jacobi](./OMPJacobi.md)
-2. [Gauss-Seidel](./OMPGaussSeidel.md)
-3. [Conjugate Gradient](./OMPConjGrad.md)
+### Parallel Implementations on Iterative Methods
+1. [Jacobi](./ParallelJacobi/parJac.md)
+2. [Gauss-Seidel](./ParallelGauss/parGau.md.md)
+3. [Conjugate Gradient](./ParallelConjGrad/parConj.md)
 
 ### Eigenvalue Methods
 1. [Power Method](./PowerM.md)
