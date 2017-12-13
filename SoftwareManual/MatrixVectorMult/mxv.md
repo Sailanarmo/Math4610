@@ -125,4 +125,4 @@ The Matrix:
    5.27071   -63.0757   -47.8357 
 ```
 
-**Last Modification Date:** Oct. 3, 2017
+**Last Modification Date:** October 2017
