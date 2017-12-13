@@ -6,11 +6,11 @@
 
 **Language:** C++
 
-**Description:** Secant's method approximates the root of the function by taking an initial guess and subtracting off the function value divided by an approximation to the derivative. This difference becomes the new value. While doing that, the routine checks to make sure the derivative is non-zero and the sequence is converging within the interval. 
+**Description:** Secant method is another way to approximate the root of a given function.
 
 **Input:** x0 and x1 are the initial guesses at the root, f indicates the desired fucntion, tol is the allowed tolerance and maxIter is the max number of iterations to be run. 
 
-**Output:** The output is an approximation to the root of type double, or an error message telling you to pick a different initial guess. 
+**Output:** The user is returned a double.  
 
 **Code:**
 ```C++
@@ -62,4 +62,4 @@ int main()
 Secant approx: 2.69781e-12
 ```
 
-**Last Modification Date:** Sep. 30, 2017
+**Last Modification Date:** September 2017
