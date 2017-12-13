@@ -9,9 +9,9 @@
 **Description:** This is the safer version of Newtons method. This will abort the current function and return the user back
 so they may do another computation if they wish. 
 
-**Input:** x0 is the initial guess at the root, f and df indicate the desired fucntion and derivative, tol is the allowed tolerance and maxIter is the max number of iterations to be run. 
+**Input:** There are no user inputs.
 
-**Output:** The output is an approximation to the root. 
+**Output:** The output is an approximation of the root. 
 
 **Code:**
 ```C++
